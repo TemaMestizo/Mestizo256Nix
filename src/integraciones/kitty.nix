@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  paleta = config.mestizo256.paleta;
+  paleta = config.mestizo256nix.paleta;
 in
 {
   config = lib.mkIf (config.programs.kitty.enable && config.mestizo256nix.activar) {
