@@ -2,10 +2,10 @@
 {
   imports = [ ./integraciones ];
 
-  options.mestizo256nix = with lib.types; {
+  options.mestizo256nix = {
     activar = lib.mkEnableOption "Activar mestizo256";
     paleta = lib.mkOption {
-      type = types.attrsOf types.anything;
+      type = lib.types.attrsOf lib.types.anything;
       description = "La paleta a usar";
     };
   };
