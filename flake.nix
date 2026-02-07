@@ -23,5 +23,6 @@
       };
 
       homeManagerModules.default = import ./src/modulo.nix { inherit lib config; };
+      paletas.mestizo = import ./src/paletas/mestizo.nix;
     };
 }
