@@ -1,8 +1,8 @@
-{ lib, config }:
+{ lib, ... }:
 {
   imports = [ ./integraciones ];
 
-  options.mestizo256 = with lib.types; {
+  options.mestizo256nix = with lib.types; {
     activar = lib.mkEnableOption "Activar mestizo256";
     paleta =
       lib.range 1 255

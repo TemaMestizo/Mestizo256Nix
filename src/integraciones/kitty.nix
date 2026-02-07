@@ -1,4 +1,4 @@
-{ lib, config }:
+{ lib, config, ... }:
 let
   paleta = config.mestizo256.paleta;
 in
