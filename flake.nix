@@ -10,8 +10,6 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      lib = pkgs.lib;
-      config = pkgs.config;
     in
     {
       devShells.${system}.default = pkgs.mkShell {
@@ -22,7 +20,7 @@
         ];
       };
 
-      homeManagerModules.default = import ./src/modulo.nix { inherit lib config; };
+      homeManagerModules.default = import ./src/modulo.nix;
       paletas.mestizo = import ./src/paletas/mestizo.nix;
     };
 }
