@@ -3,7 +3,7 @@ let
   paleta = config.mestizo256.paleta;
 in
 {
-  config = lib.mkIf (config.programs.kitty.enable && config.mestizo256.activar) {
+  config = lib.mkIf (config.programs.kitty.enable && config.mestizo256nix.activar) {
     programs.kitty.settings =
       with paleta;
       {
