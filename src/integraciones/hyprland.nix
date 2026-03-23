@@ -10,25 +10,29 @@ in
   config = lib.mkIf (config.wayland.windowManager.hyprland.enable && cfg.activar) {
     wayland.windowManager.hyprland.settings =
       let
-        f = cadena: builtins.substring 1 (-1) cadena;
+        f = cadena: "rgb(${builtins.substring 1 (-1) cadena})";
+        colorActivo = f cfg.paleta.color1;
+        colorInactivo = f cfg.paleta.color242;
+        colorActivoBloqueado = f cfg.paleta.color2;
+        colorInactivoBloqueado = f cfg.paleta.color118;
       in
       with cfg.paleta;
       {
         general = {
-          "col.active_border" = "rgb(${f color204})";
-          "col.inactive_border" = "rgb(${f color242})";
+          "col.active_border" = colorActivo;
+          "col.inactive_border" = colorInactivo;
         };
         group = {
-          "col.border_active" = "rgb(${f color1})";
-          "col.border_inactive" = "rgb(${f color209})";
-          "col.border_locked_active" = "rgb(${f color6})";
-          "col.border_locked_inactive" = "rgb(${f color4})";
+          "col.border_active" = colorActivo;
+          "col.border_inactive" = colorInactivo;
+          "col.border_locked_active" = colorActivoBloqueado;
+          "col.border_locked_inactive" = colorInactivoBloqueado;
           groupbar = {
-            "col.active" = "rgb(${f color1})";
-            "col.inactive" = "rgb(${f color209})";
-            "col.locked_active" = "rgb(${f color6})";
-            "col.locked_inactive" = "rgb(${f color39})";
-            text_color = "rgb(${f color252})";
+            "col.active" = colorActivo;
+            "col.inactive" = colorInactivo;
+            "col.locked_active" = colorActivoBloqueado;
+            "col.locked_inactive" = colorInactivoBloqueado;
+            text_color = f color252;
           };
         };
       };
