@@ -15,8 +15,9 @@ in
       with cfg.paleta;
       {
         general = {
-          "col.active_border" = "rgb(${f color246})";
-          "col.inactive_border" = "rgb(${f color242})";
+          "col.active_border" = "rgb(${f color92})";
+          "col.inactive_border" = "rgb(${f color238})";
+          border_size = 4;
         };
         group = {
           "col.border_active" = "rgb(${f color1})";
