@@ -8,7 +8,7 @@ in
       with cfg.paleta;
       {
         background = color16;
-        foreground = color252;
+        foreground = color7;
         cursor = color7;
         selection_background = color53;
         selection_foreground = "none";
