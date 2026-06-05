@@ -2,7 +2,7 @@
   description = "Un tema oscuro para los que no salen de casa";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=25.11";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=26.05";
   };
 
   outputs =
@@ -20,7 +20,10 @@
         ];
       };
 
-      homeManagerModules.default = import ./src/modulo.nix;
-      paletas.mestizo = import ./src/paletas/mestizo.nix;
+      moduloHM = ./src/modulo.nix;
+      paletas = {
+        mestizo = import ./src/paletas/mestizo.nix;
+        gruvbox = import ./src/paletas/gruvbox.nix;
+      };
     };
 }
